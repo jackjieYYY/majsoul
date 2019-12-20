@@ -1,9 +1,12 @@
+import platform
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
+
 from Func.Controller import *
 from Func.picManager import *
-import platform
+
 
 class process():
     def __init__(self, username, passwd):
@@ -26,7 +29,7 @@ class process():
             return webdriver.Chrome('./chromedriver.exe', chrome_options=self.options)
 
         elif sys == "Linux":
-                        print("OS is Linux!!!")
+            print("OS is Linux!!!")
             return webdriver.Chrome('./chromedriver', chrome_options=self.options)
         else:
             pass

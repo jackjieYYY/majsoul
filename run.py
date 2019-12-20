@@ -1,7 +1,8 @@
-from Func.Porcess import process
 import configparser
-import os
 import json
+import os
+
+from Func.Porcess import process
 
 
 def readUser():
@@ -16,10 +17,10 @@ def readUser():
 
 
 
-
-
 if __name__ == "__main__":
-
+    '''
+    Chrome version = 79
+    '''
     dic = readUser()
     p=process(dic[0][0],dic[0][1])
 
