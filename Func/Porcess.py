@@ -68,6 +68,7 @@ class process():
             print("success_Openpage")
             self.ProcessFalse = True
         except Exception as e:
+            self.ProcessFalse = True
             print(e)
 
 
