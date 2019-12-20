@@ -55,7 +55,7 @@ class process():
             time.sleep(5)
             count = count+1
 
-        print("打开网页成功_Openpage")
+        print("success_Openpage")
         self.ProcessFalse = True
 
     def Login(self):
@@ -78,7 +78,7 @@ class process():
             time.sleep(5)
             count = count+1
         self.ProcessFalse = True
-        print("登录_Login")
+        print("success_Login")
 
     def banner(self):
         if self.ProcessFalse:
@@ -94,7 +94,7 @@ class process():
             click_locxy(self.driver, 931, 285)
             count = count+1
         self.ProcessFalse = True
-        print("关闭banner成功_banner")
+        print("success_banner")
 
     def openActivePage(self):
 
@@ -111,7 +111,7 @@ class process():
             click_locxy(self.driver, 770, 240)
             count = count+1
         self.ProcessFalse = True
-        print("打开活动页面成功_openActivePage")
+        print("success_openActivePage")
 
     def openRpage(self):
 
@@ -135,7 +135,7 @@ class process():
             count = count+1
         self.ProcessFalse = True
 
-        print("打开复活页面成功_openRpage")
+        print("success_openRpage")
 
     def buyGift(self):
         if self.ProcessFalse:
@@ -152,7 +152,7 @@ class process():
                 return
             count = count+1
         
-        print("购买商品成功_buyGift")
+        print("success_buyGift")
 
     def openShoppage(self):
         if self.ProcessFalse:
@@ -167,4 +167,4 @@ class process():
             click_locxy(self.driver, 885, 725)
             count = count+1
         self.ProcessFalse = True
-        print("打开商店页面成功_openShoppage")
+        print("success_openShoppage")
