@@ -8,9 +8,12 @@ from selenium.webdriver.chrome.options import Options
 from Func.Controller import *
 from Func.picManager import *
 
+count = 0
+
+
 def getName():
     global count
-    count=count+1
+    count += 1
     return "screenshot-{}.png".format(count)
 
 
@@ -25,7 +28,6 @@ class process():
         self.ProcessFalse = False
         self.username = username
         self.passwd = passwd
-
 
     def getWebDrive(self):
         sys = platform.system()
@@ -158,7 +160,7 @@ class process():
             else:
                 return
             count = count+1
-        
+
         print("success_buyGift")
 
     def openShoppage(self):
