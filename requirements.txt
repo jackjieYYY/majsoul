@@ -1,3 +1,4 @@
 selenium==3.141.0
 baidu_aip==2.2.18.0
 Pillow==6.2.1
+configparser==4.0.2
