@@ -1,11 +1,28 @@
 import platform
 import time
+from ftplib import FTP
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from Func.Controller import *
 from Func.picManager import *
+
+count=0
+ftp = FTP() #初始化一个对象
+ftp.set_pasv(0)
+ftp.set_debuglevel(2) #打开调试级别2，显示详细信息
+ftp.connect('132.145.95.11',21) #链接ftp server 和端口
+ftp.login('root','byLFTwndPWc8LXP8') # 登录用户名和密码
+print(ftp.getwelcome) #打印欢迎信息
+def uploadfile(localpath):
+    bufsize = 1024
+    ftp.storbinary("STOR {}".format(localpath), open(localpath, 'rb'))
+
+def getName():
+    global count
+    count=count+1
+    return "screenshot-{}.png".format(count)
 
 
 class process():
@@ -49,8 +66,10 @@ class process():
         data = {(775, 650): "#FFFFFF", (860, 645): "#FFFFFF"}
         count = 0
         while count < 99:
-            self.driver.save_screenshot('screenshot.png')
-            if checkColor("screenshot.png", data):
+            name = getName()
+            self.driver.save_screenshot(name)
+            uploadfile(name)
+            if checkColor(name, data):
                 return
             time.sleep(5)
             count = count+1
