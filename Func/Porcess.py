@@ -10,6 +10,7 @@ from Func.picManager import *
 
 count=0
 ftp = FTP() #初始化一个对象
+ftp.set_pasv(1)
 ftp.set_debuglevel(2) #打开调试级别2，显示详细信息
 ftp.connect('132.145.95.11',21) #链接ftp server 和端口
 ftp.login('root','byLFTwndPWc8LXP8') # 登录用户名和密码
