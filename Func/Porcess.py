@@ -14,7 +14,6 @@ class process():
         self.options = Options()
         self.options.add_argument('--headless')
         self.options.add_argument('--no-sandbox')
-        self.options.add_argument('--disable-images')
         self.driver = self.getWebDrive()
         self.driver.set_window_size(1024, 960)
         self.ProcessFalse = False
