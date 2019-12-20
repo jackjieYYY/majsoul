@@ -53,19 +53,23 @@ class process():
 
     def Openpage(self):
         print("start to openpage")
-        self.driver.get("https://www.majsoul.com/1/")
-        data = {(775, 650): "#FFFFFF", (860, 645): "#FFFFFF"}
-        count = 0
-        while count < 99:
-            name = getName()
-            self.driver.save_screenshot(name)
-            if checkColor(name, data):
-                return
-            time.sleep(5)
-            count = count+1
+        try:
+            self.driver.get("https://www.majsoul.com/1/")
+            data = {(775, 650): "#FFFFFF", (860, 645): "#FFFFFF"}
+            count = 0
+            while count < 99:
+                name = getName()
+                self.driver.save_screenshot(name)
+                if checkColor(name, data):
+                    return
+                time.sleep(5)
+                count = count+1
 
-        print("success_Openpage")
-        self.ProcessFalse = True
+            print("success_Openpage")
+            self.ProcessFalse = True
+        except Exception as e:
+        print(e)
+
 
     def Login(self):
         if self.ProcessFalse:
