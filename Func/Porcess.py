@@ -37,7 +37,7 @@ class process():
 
         elif sys == "Linux":
             print("OS is Linux!!!")
-            return webdriver.Chrome('./chromedriver', chrome_options=self.options)
+            return webdriver.Chrome('chromedriver', chrome_options=self.options)
         else:
             pass
 
