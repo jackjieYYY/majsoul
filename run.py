@@ -3,6 +3,7 @@ import configparser
 import os
 import json
 
+
 def readUser():
     dictAccounts = []
     cfg = configparser.ConfigParser()
@@ -12,6 +13,10 @@ def readUser():
         account = (jsonData["Email"], jsonData["Passwd"])
         dictAccounts.append(account)
     return dictAccounts
+
+
+
+
 
 if __name__ == "__main__":
 

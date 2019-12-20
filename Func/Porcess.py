@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 from Func.Controller import *
 from Func.picManager import *
-
+import platform
 
 class process():
     def __init__(self, username, passwd):
@@ -12,12 +12,24 @@ class process():
         self.options.add_argument('--headless')
         self.options.add_argument('--no-sandbox')
         self.options.add_argument('--disable-images')
-        self.driver = webdriver.Chrome(
-            './chromedriver.exe', chrome_options=self.options)
+        self.driver = self.getWebDrive()
         self.driver.set_window_size(1024, 960)
         self.ProcessFalse = False
         self.username = username
         self.passwd = passwd
+
+
+    def getWebDrive(self):
+        sys = platform.system()
+        if sys == "Windows":
+            print("OS is Windows!!!")
+            return webdriver.Chrome('./chromedriver.exe', chrome_options=self.options)
+
+        elif sys == "Linux":
+                        print("OS is Linux!!!")
+            return webdriver.Chrome('./chromedriver', chrome_options=self.options)
+        else:
+            pass
 
     def run(self):
         self.Openpage()
