@@ -45,6 +45,7 @@ class process():
         self.driver.quit()
 
     def Openpage(self):
+        print("start to openpage")
         self.driver.get("https://www.majsoul.com/1/")
         data = {(775, 650): "#FFFFFF", (860, 645): "#FFFFFF"}
         count = 0
